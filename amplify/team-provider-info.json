@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tiposbebidas-dev-14710-authRole",
+      "UnauthRoleArn": "arn:aws:iam::220575723291:role/amplify-tiposbebidas-dev-14710-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::220575723291:role/amplify-tiposbebidas-dev-14710-authRole",
+      "Region": "sa-east-1",
+      "DeploymentBucketName": "amplify-tiposbebidas-dev-14710-deployment",
+      "UnauthRoleName": "amplify-tiposbebidas-dev-14710-unauthRole",
+      "StackName": "amplify-tiposbebidas-dev-14710",
+      "StackId": "arn:aws:cloudformation:sa-east-1:220575723291:stack/amplify-tiposbebidas-dev-14710/930896f0-6983-11ee-a8ea-0a63c6fb5bea",
+      "AmplifyAppId": "d3lz1yjjh60qk5"
+    },
+    "categories": {
+      "api": {
+        "tiposbebidas": {}
+      },
+      "auth": {
+        "tiposbebidas8eef4c06": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3lz1yjjh60qk5",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
