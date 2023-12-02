@@ -1,16 +1,63 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createCategoria = /* GraphQL */ `
-  mutation CreateCategoria(
-    $input: CreateCategoriaInput!
-    $condition: ModelCategoriaConditionInput
+export const createEstadosHistoricosCC = /* GraphQL */ `
+  mutation CreateEstadosHistoricosCC(
+    $input: CreateEstadosHistoricosCCInput!
+    $condition: ModelEstadosHistoricosCCConditionInput
   ) {
-    createCategoria(input: $input, condition: $condition) {
+    createEstadosHistoricosCC(input: $input, condition: $condition) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateEstadosHistoricosCC = /* GraphQL */ `
+  mutation UpdateEstadosHistoricosCC(
+    $input: UpdateEstadosHistoricosCCInput!
+    $condition: ModelEstadosHistoricosCCConditionInput
+  ) {
+    updateEstadosHistoricosCC(input: $input, condition: $condition) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteEstadosHistoricosCC = /* GraphQL */ `
+  mutation DeleteEstadosHistoricosCC(
+    $input: DeleteEstadosHistoricosCCInput!
+    $condition: ModelEstadosHistoricosCCConditionInput
+  ) {
+    deleteEstadosHistoricosCC(input: $input, condition: $condition) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createCentroCostos = /* GraphQL */ `
+  mutation CreateCentroCostos(
+    $input: CreateCentroCostosInput!
+    $condition: ModelCentroCostosConditionInput
+  ) {
+    createCentroCostos(input: $input, condition: $condition) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -20,16 +67,18 @@ export const createCategoria = /* GraphQL */ `
     }
   }
 `;
-export const updateCategoria = /* GraphQL */ `
-  mutation UpdateCategoria(
-    $input: UpdateCategoriaInput!
-    $condition: ModelCategoriaConditionInput
+export const updateCentroCostos = /* GraphQL */ `
+  mutation UpdateCentroCostos(
+    $input: UpdateCentroCostosInput!
+    $condition: ModelCentroCostosConditionInput
   ) {
-    updateCategoria(input: $input, condition: $condition) {
+    updateCentroCostos(input: $input, condition: $condition) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -39,16 +88,18 @@ export const updateCategoria = /* GraphQL */ `
     }
   }
 `;
-export const deleteCategoria = /* GraphQL */ `
-  mutation DeleteCategoria(
-    $input: DeleteCategoriaInput!
-    $condition: ModelCategoriaConditionInput
+export const deleteCentroCostos = /* GraphQL */ `
+  mutation DeleteCentroCostos(
+    $input: DeleteCentroCostosInput!
+    $condition: ModelCentroCostosConditionInput
   ) {
-    deleteCategoria(input: $input, condition: $condition) {
+    deleteCentroCostos(input: $input, condition: $condition) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -58,47 +109,80 @@ export const deleteCategoria = /* GraphQL */ `
     }
   }
 `;
-export const createBebestible = /* GraphQL */ `
-  mutation CreateBebestible(
-    $input: CreateBebestibleInput!
-    $condition: ModelBebestibleConditionInput
+export const createProyectos = /* GraphQL */ `
+  mutation CreateProyectos(
+    $input: CreateProyectosInput!
+    $condition: ModelProyectosConditionInput
   ) {
-    createBebestible(input: $input, condition: $condition) {
+    createProyectos(input: $input, condition: $condition) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }
 `;
-export const updateBebestible = /* GraphQL */ `
-  mutation UpdateBebestible(
-    $input: UpdateBebestibleInput!
-    $condition: ModelBebestibleConditionInput
+export const updateProyectos = /* GraphQL */ `
+  mutation UpdateProyectos(
+    $input: UpdateProyectosInput!
+    $condition: ModelProyectosConditionInput
   ) {
-    updateBebestible(input: $input, condition: $condition) {
+    updateProyectos(input: $input, condition: $condition) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }
 `;
-export const deleteBebestible = /* GraphQL */ `
-  mutation DeleteBebestible(
-    $input: DeleteBebestibleInput!
-    $condition: ModelBebestibleConditionInput
+export const deleteProyectos = /* GraphQL */ `
+  mutation DeleteProyectos(
+    $input: DeleteProyectosInput!
+    $condition: ModelProyectosConditionInput
   ) {
-    deleteBebestible(input: $input, condition: $condition) {
+    deleteProyectos(input: $input, condition: $condition) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }

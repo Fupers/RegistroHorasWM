@@ -4,7 +4,12 @@ import { Myroutes } from "./routers/routes";
 import { styled, ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
 import { Sidebar } from "./components/Sidebar";
+import { Topbar } from "./components/Topbar";
 import { Light, Dark } from "./styles/Themes";
+
+import { Amplify} from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 export const ThemeContext = React.createContext(null);
 
@@ -20,7 +25,10 @@ function App() {
           <BrowserRouter>
             <Container className={sidebarOpen ? "sidebarState active" : ""}>
                 <Sidebar sidebarOpen = {sidebarOpen} setSidebarOpen = {setSidebarOpen}/>
-                <Myroutes />
+                <div className='content'>
+                  <Topbar />
+                  <Myroutes />
+                </div>
             </Container>
           </BrowserRouter>
         </ThemeProvider>

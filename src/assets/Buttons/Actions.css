@@ -1,0 +1,43 @@
+@import url('../../styles/Themes.css');
+
+.ActionButton {
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 5px;
+}
+
+.Edit {
+  background-color: #f5ad11;
+}
+
+.Edit:hover {
+  background-color: #fcb826;
+}
+
+.Delete {
+  background-color: #a12828;
+}
+
+.Delete:hover {
+  background-color: #bd3a3a;
+}
+
+.View {
+  background-color: #5159a1;
+}
+
+.View:hover {
+  background-color: #636bb6;
+}
+
+.IconActions {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}

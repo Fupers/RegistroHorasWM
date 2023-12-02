@@ -1,0 +1,31 @@
+@import url('../../../styles/Themes.css');
+
+.buttonstyle {
+  background-color: var(--bn);
+  font-family: "Roboto", sans-serif;
+  color: var(--textoestatico);
+  margin-right: 5px;
+  border-radius: 8px;
+  border: 2px solid var(--bnborder);
+  cursor: pointer;
+}
+
+.buttonstyle:hover {
+  border-color: var(--bnhborder);
+  background-color: var(--bnh);
+}
+
+.positioncontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.iconstyle {
+  font-size: 100%;
+  padding-right: 7px;
+  align-items: center;
+  display: flex;
+}

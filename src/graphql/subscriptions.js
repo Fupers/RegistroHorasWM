@@ -1,15 +1,59 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateCategoria = /* GraphQL */ `
-  subscription OnCreateCategoria(
-    $filter: ModelSubscriptionCategoriaFilterInput
+export const onCreateEstadosHistoricosCC = /* GraphQL */ `
+  subscription OnCreateEstadosHistoricosCC(
+    $filter: ModelSubscriptionEstadosHistoricosCCFilterInput
   ) {
-    onCreateCategoria(filter: $filter) {
+    onCreateEstadosHistoricosCC(filter: $filter) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateEstadosHistoricosCC = /* GraphQL */ `
+  subscription OnUpdateEstadosHistoricosCC(
+    $filter: ModelSubscriptionEstadosHistoricosCCFilterInput
+  ) {
+    onUpdateEstadosHistoricosCC(filter: $filter) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteEstadosHistoricosCC = /* GraphQL */ `
+  subscription OnDeleteEstadosHistoricosCC(
+    $filter: ModelSubscriptionEstadosHistoricosCCFilterInput
+  ) {
+    onDeleteEstadosHistoricosCC(filter: $filter) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateCentroCostos = /* GraphQL */ `
+  subscription OnCreateCentroCostos(
+    $filter: ModelSubscriptionCentroCostosFilterInput
+  ) {
+    onCreateCentroCostos(filter: $filter) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -19,15 +63,17 @@ export const onCreateCategoria = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateCategoria = /* GraphQL */ `
-  subscription OnUpdateCategoria(
-    $filter: ModelSubscriptionCategoriaFilterInput
+export const onUpdateCentroCostos = /* GraphQL */ `
+  subscription OnUpdateCentroCostos(
+    $filter: ModelSubscriptionCentroCostosFilterInput
   ) {
-    onUpdateCategoria(filter: $filter) {
+    onUpdateCentroCostos(filter: $filter) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -37,15 +83,17 @@ export const onUpdateCategoria = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCategoria = /* GraphQL */ `
-  subscription OnDeleteCategoria(
-    $filter: ModelSubscriptionCategoriaFilterInput
+export const onDeleteCentroCostos = /* GraphQL */ `
+  subscription OnDeleteCentroCostos(
+    $filter: ModelSubscriptionCentroCostosFilterInput
   ) {
-    onDeleteCategoria(filter: $filter) {
+    onDeleteCentroCostos(filter: $filter) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -55,44 +103,77 @@ export const onDeleteCategoria = /* GraphQL */ `
     }
   }
 `;
-export const onCreateBebestible = /* GraphQL */ `
-  subscription OnCreateBebestible(
-    $filter: ModelSubscriptionBebestibleFilterInput
+export const onCreateProyectos = /* GraphQL */ `
+  subscription OnCreateProyectos(
+    $filter: ModelSubscriptionProyectosFilterInput
   ) {
-    onCreateBebestible(filter: $filter) {
+    onCreateProyectos(filter: $filter) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }
 `;
-export const onUpdateBebestible = /* GraphQL */ `
-  subscription OnUpdateBebestible(
-    $filter: ModelSubscriptionBebestibleFilterInput
+export const onUpdateProyectos = /* GraphQL */ `
+  subscription OnUpdateProyectos(
+    $filter: ModelSubscriptionProyectosFilterInput
   ) {
-    onUpdateBebestible(filter: $filter) {
+    onUpdateProyectos(filter: $filter) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }
 `;
-export const onDeleteBebestible = /* GraphQL */ `
-  subscription OnDeleteBebestible(
-    $filter: ModelSubscriptionBebestibleFilterInput
+export const onDeleteProyectos = /* GraphQL */ `
+  subscription OnDeleteProyectos(
+    $filter: ModelSubscriptionProyectosFilterInput
   ) {
-    onDeleteBebestible(filter: $filter) {
+    onDeleteProyectos(filter: $filter) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }

@@ -1,0 +1,33 @@
+.light {
+  --texto: #202020;
+  --texto2: #adadad;
+  --textoestatico: #f5f5f5;
+  --body: #fff;
+  --bg1: #D9D9D9; /* gris menu */
+  --bg2: #f5f5f5; /* gris base */
+  --bg3: #fafafa; /* gris claro base */
+  --bg4: #ececec; /* gris claro menu */
+  --linea1: #cccccc;
+  --bn: #EB7E42;
+  --bnborder: #db743d;
+  --bnh: #f78f58;
+  --bnhborder: #e78652;
+  --inputb: #c4c4c4;
+}
+
+.dark {
+  --texto: #fff;
+  --texto2: #696969;
+  --textoestatico: #f5f5f5;
+  --body: #202020;
+  --bg1: #151515;
+  --bg2: #2b2b2b;
+  --bg3: #3a3a3a;
+  --bg4: #202020;
+  --linea1: #1f1f1f;
+  --bn: #EB7E42;
+  --bnh: #f78f58;
+  --bnborder: #ca642d;
+  --bnhborder: #e0804c;
+  --inputb: #252525;
+}

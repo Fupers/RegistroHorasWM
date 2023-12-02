@@ -1,0 +1,22 @@
+@import url('../../styles/Themes.css');
+
+.inputstyle {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid var(--inputb);
+  background-color: var(--bg3);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: var(--texto);
+  padding-left: 10px;
+}
+
+.inputstyle::placeholder {
+  color: var(--texto2);
+}
+
+.inputstyle:focus {
+  border-color: var(--bn);
+  outline: none;
+}

@@ -13,7 +13,8 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 import { HiUsers } from "react-icons/hi";
-import { Component } from "./Buttons/StateButton/StateButton";
+import { StateButton } from "../assets/Buttons/StateButton/StateButton";
+import "./Sidebar.css";
 
 export function Sidebar({sidebarOpen, setSidebarOpen}) {
   const ModSidebaropen=()=>{
@@ -23,15 +24,20 @@ export function Sidebar({sidebarOpen, setSidebarOpen}) {
   const CambiarTheme = () => {
     setTheme((theme)=>(theme==="light"?"dark":"light"))
   };
+  const homeclick = () => {
+    window.location.href = '/';
+  };
 
   return (
     <Container isOpen ={sidebarOpen} themeUse={theme}>
       <button className="Sidebarbutton" onClick={ModSidebaropen}>
         <AiOutlineLeft/>
       </button>
-      <div className="Logocontent">
+      <div className="Logocontent" onClick={homeclick}>
         <div className="imgcontent">
-          <img src={logo} />
+          <button className="buttonlogo">
+            <img src={logo} />
+          </button>
         </div>
       </div>
       {linksArray.map(({icon, label, to})=>(
@@ -42,18 +48,19 @@ export function Sidebar({sidebarOpen, setSidebarOpen}) {
           </NavLink>
         </div>
       ))}
-      <Divider/>
-      {secondarylinksArray.map(({icon, label, to})=>(
-        <div className="LinkContainer" key={label}>
-          <NavLink to={to} className={({ isActive }) => `Links${isActive ? ` active` : ``}`}>
-            <div className="Linkicon">{icon}</div>
-            {sidebarOpen && <span>{label}</span>}
-          </NavLink>
-        </div>
-      ))}
-      <Divider/>
-      <div className="positionbutton">
-        <Component className="component-26" property1="frame-23" onClick={CambiarTheme}/>
+      <div className={`positionbutton ${!sidebarOpen ? 'activo':''}`}>
+        <StateButton property1="frame-23" onClick={CambiarTheme}/>
+      </div>
+      <div className="secondarylinks">
+        {secondarylinksArray.map(({icon, label, to})=>(
+          <div className="LinkContainer" key={label}>
+            <NavLink to={to} className={({ isActive }) => `Links${isActive ? ` active` : ``}`}>
+              <div className="Linkicon">{icon}</div>
+              {sidebarOpen && <span className="textomenu">{label}</span>}
+            </NavLink>
+          </div>
+        ))}
+        <Divider/>
       </div>
       </Container>
   )
@@ -95,14 +102,17 @@ const linksArray=[
 ];
 const secondarylinksArray=[
   {
-    label: "Configuracion",
-    icon: <AiFillSetting/>,
-    to: "/null"
+    label: "Test",
+    to: "/test"
   },
   {
-    label: "Salir",
+    icon: <AiFillSetting/>,
+    to: "/configuracion"
+  },
+  {
+    label: "Cerrar sesión",
     icon: <BiLogOut/>,
-    to: "/null"
+    to: "/"
   },
 ]
 //#endregion
@@ -142,6 +152,7 @@ const Container = styled.div`
     align-items: center;
     padding-bottom: ${v.lgSpacing};
     padding-top: 10px;
+    height: 72px;
     .imgcontent{
       display: flex;
       img{
@@ -158,9 +169,8 @@ const Container = styled.div`
 
   }
   .LinkContainer{
-    margin: 8px 0;
+    margin: 0px 0;
     transition: 0.3s;
-    padding: 0 ${({isOpen})=>(isOpen?'20px':'15%')};
     :hover{
       background: ${(props) => props.theme.bg3};
     }
@@ -168,7 +178,7 @@ const Container = styled.div`
       display: flex;
       align-items: center;
       text-decoration: none;
-      padding: calc(${v.smSpacing}-3px) 0;
+      padding: 0 ${({isOpen})=>(isOpen?'25px':'15%')};
       color: ${(props) => props.theme.text};
       height: 50px;
       font-size: 16px;
@@ -181,14 +191,23 @@ const Container = styled.div`
           font-size: 32px;
         }
       }
+      span {
+        opacity: ${({isOpen}) => (isOpen? '1':'0')};
+        white-space: nowrap;
+        overflow: hidden;
+      }
       &.active {
+        background: ${(props) => props.theme.bg4};
+        :hover{
+          background: ${(props) => props.theme.bg4};
+        }
         span{
-          color: ${(props) => props.theme.bg4};
+          color: ${(props) => props.theme.body};
           font-size: 18px;
         }
         .Linkicon {
           svg {
-            color: ${(props) => props.theme.bg4};
+            color: ${(props) => props.theme.body};
           }
         }
       }
@@ -211,7 +230,7 @@ const Container = styled.div`
       position: relative;
       .theme-container{
         background-blend-mode: multiply, multiply;
-        transition: 0.4s;
+        transition: 0.3s;
         .grid{
           display: grid;
           justify-items: center;
@@ -268,9 +287,6 @@ const Container = styled.div`
         }
       }
     }
-  }
-  .positionbutton{
-    padding-left: 40px;
   }
 `
 const Divider = styled.div`

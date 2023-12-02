@@ -1,0 +1,21 @@
+@import url('../styles/Themes.css');
+
+.Topbar {
+  background-color: var(--bg2);
+  display: flex;
+  align-items: flex-start;
+  height: 110px;
+  width: 100%;
+}
+
+.positionbusqueda {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  height: 90%;
+}
+
+.divider {
+  height: 2px;
+  background-color: var(--bg1);
+}

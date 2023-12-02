@@ -2,15 +2,24 @@
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
-type Categoria @model @auth(rules: [{allow: public}]) {
+type EstadosHistoricosCC @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  estado: String!
+  centrocostosID: ID! @index(name: "byCentroCostos")
+}
+
+type CentroCostos @model @auth(rules: [{allow: public}]) {
   id: ID!
   nombre: String!
   descripcion: String
-  R_CategoriaBebestible: [Bebestible] @hasMany(indexName: "byCategoria", fields: ["id"])
+  administrador: String!
+  estado: Boolean!
+  CentroCostos_EstadosHistoricosCC: [EstadosHistoricosCC] @hasMany(indexName: "byCentroCostos", fields: ["id"])
 }
 
-type Bebestible @model @auth(rules: [{allow: public}]) {
+type Proyectos @model @auth(rules: [{allow: public}]) {
   id: ID!
-  nombre: String!
-  categoriaID: ID! @index(name: "byCategoria")
+  nombre: String
+  estado: Boolean
+  Proyecto_CentroCostos: CentroCostos! @hasOne
 }

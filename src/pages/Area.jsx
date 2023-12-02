@@ -1,12 +1,12 @@
+import { React, useContext } from "react";
+import { ThemeContext } from "../App";
+import "./styles_pages/_General.css";
 import styled from "styled-components";
 
 export function Area() {
   return (
-    <Container>
+    <div className="pagecontainer">
       <h1>Area</h1>
-    </Container>
+    </div>
   );
 }
-
-const Container = styled.div`
-`

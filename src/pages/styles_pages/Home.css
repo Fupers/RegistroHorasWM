@@ -1,0 +1,17 @@
+@import url(../../styles/Themes.css);
+
+.logocontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  height: 50%;
+  width: 100%;
+  background-color: var(--bg2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logohome {
+  min-width: 300px;
+  width: 35%;
+}

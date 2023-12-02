@@ -1,13 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getCategoria = /* GraphQL */ `
-  query GetCategoria($id: ID!) {
-    getCategoria(id: $id) {
+export const getEstadosHistoricosCC = /* GraphQL */ `
+  query GetEstadosHistoricosCC($id: ID!) {
+    getEstadosHistoricosCC(id: $id) {
+      id
+      estado
+      centrocostosID
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listEstadosHistoricosCCS = /* GraphQL */ `
+  query ListEstadosHistoricosCCS(
+    $filter: ModelEstadosHistoricosCCFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listEstadosHistoricosCCS(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        estado
+        centrocostosID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getCentroCostos = /* GraphQL */ `
+  query GetCentroCostos($id: ID!) {
+    getCentroCostos(id: $id) {
       id
       nombre
       descripcion
-      R_CategoriaBebestible {
+      administrador
+      estado
+      CentroCostos_EstadosHistoricosCC {
         nextToken
         __typename
       }
@@ -17,17 +55,19 @@ export const getCategoria = /* GraphQL */ `
     }
   }
 `;
-export const listCategorias = /* GraphQL */ `
-  query ListCategorias(
-    $filter: ModelCategoriaFilterInput
+export const listCentroCostos = /* GraphQL */ `
+  query ListCentroCostos(
+    $filter: ModelCentroCostosFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCategorias(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCentroCostos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         nombre
         descripcion
+        administrador
+        estado
         createdAt
         updatedAt
         __typename
@@ -37,31 +77,43 @@ export const listCategorias = /* GraphQL */ `
     }
   }
 `;
-export const getBebestible = /* GraphQL */ `
-  query GetBebestible($id: ID!) {
-    getBebestible(id: $id) {
+export const getProyectos = /* GraphQL */ `
+  query GetProyectos($id: ID!) {
+    getProyectos(id: $id) {
       id
       nombre
-      categoriaID
+      estado
+      Proyecto_CentroCostos {
+        id
+        nombre
+        descripcion
+        administrador
+        estado
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
+      proyectosProyecto_CentroCostosId
       __typename
     }
   }
 `;
-export const listBebestibles = /* GraphQL */ `
-  query ListBebestibles(
-    $filter: ModelBebestibleFilterInput
+export const listProyectos = /* GraphQL */ `
+  query ListProyectos(
+    $filter: ModelProyectosFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBebestibles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listProyectos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         nombre
-        categoriaID
+        estado
         createdAt
         updatedAt
+        proyectosProyecto_CentroCostosId
         __typename
       }
       nextToken
@@ -69,16 +121,16 @@ export const listBebestibles = /* GraphQL */ `
     }
   }
 `;
-export const bebestiblesByCategoriaID = /* GraphQL */ `
-  query BebestiblesByCategoriaID(
-    $categoriaID: ID!
+export const estadosHistoricosCCSByCentrocostosID = /* GraphQL */ `
+  query EstadosHistoricosCCSByCentrocostosID(
+    $centrocostosID: ID!
     $sortDirection: ModelSortDirection
-    $filter: ModelBebestibleFilterInput
+    $filter: ModelEstadosHistoricosCCFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    bebestiblesByCategoriaID(
-      categoriaID: $categoriaID
+    estadosHistoricosCCSByCentrocostosID(
+      centrocostosID: $centrocostosID
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -86,8 +138,8 @@ export const bebestiblesByCategoriaID = /* GraphQL */ `
     ) {
       items {
         id
-        nombre
-        categoriaID
+        estado
+        centrocostosID
         createdAt
         updatedAt
         __typename
